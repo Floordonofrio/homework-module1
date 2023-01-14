@@ -180,3 +180,44 @@ td:first-child{
     font-weight: bold;
     background: #BDE1FF;
 }
+/*Form*/
+form{
+    border-color: #9ed034;
+}
+legend{
+    text-transform: uppercase;
+    font-weight: bolder;
+    height: 40px;
+    padding-top: 15px;
+    color: #4977D1;
+}
+label{
+    display: block;
+    margin: 15px 0 0 0; /*top, right, bottom, left*/
+}
+input{
+    width: 300px;
+    height: 25px;
+}
+input[type="radio"]{
+    width: 25px;
+    height: 15px;
+}
+textarea{
+    width: 300px;
+    height: 100px;
+}
+input[type="submit"]{
+    display: box;
+    margin: 20px 0 10px 0;
+    width: 100px;
+    background-color: #4977D1;
+    color: #fff;
+}
+h1{
+    color:#9ed034;
+}
+.phone span[Phone]{
+    font-weight: bolder;
+}
+/*Hay que ponerle color al borde y hacer en negrita la palabra Phone y la palabra Email*/
