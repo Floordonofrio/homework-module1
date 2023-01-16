@@ -100,6 +100,39 @@ section #partners .partner img{
     width: 90px;
     height: 90px;
 }
+/*Cliffs*/
+#main-cliff{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+section #cliff-section{
+    width: 100%;
+    background-color:white;
+}
+section #cliff-top{
+    width: 100%;
+    padding: 2em 0 2em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+section #cliff-top #cliff{
+    display: inline-block;
+    margin: 0 0.75em;
+    padding: 1.3em 1.5em;
+    background-color: #fff;
+}
+section #cliff-bottom{
+    width: 100%;
+    padding: 2em 0 2em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+section #cliff-bottom #cliff{
+    display: inline-block;
+    margin: 0 0.75em;
+    padding: 1.3em 1.5em;
+    background-color: #fff;
+}
 /*Footer*/
 footer{
     width: 100%;
