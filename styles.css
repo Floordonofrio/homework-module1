@@ -225,10 +225,11 @@ td:first-child{
     background: #BDE1FF;
 }
 /*Form*/
-form{
-    border-color: #9ed034;
+fieldset{
+    border:2px solid  #9ed034
 }
 legend{
+    border:2px solid  #9ed034;
     text-transform: uppercase;
     font-weight: bolder;
     height: 40px;
@@ -262,6 +263,22 @@ h1{
     color:#9ed034;
 }
 .phone span[Phone]{
-    font-weight: bolder;
+    font-weight: bolder #8baae9;
 }
 /*Hay que ponerle color al borde y hacer en negrita la palabra Phone y la palabra Email*/
+/*Time of the Day*/
+#timeofday{
+    padding-top: 20px;
+    text-align: center;
+    height: 50px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
+}
+#timeofday span{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3a3a3a;
+}
+#clock{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #125688;
+}
