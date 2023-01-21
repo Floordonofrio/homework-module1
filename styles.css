@@ -64,16 +64,28 @@ header{
     color: #fff;
 }
 /*Main*/
+h1{
+    padding-left: 200px;
+    padding-right: 200px;
+    color:#9ed034;
+    font-family: Arial, Helvetica, sans-serif;
+}
 h2{
+    padding-left: 200px;
+    padding-right: 200px;
     color: #9ed034;
     font-family: Arial, Helvetica, sans-serif;
 }
 h3{
+    padding-left: 200px;
+    padding-right: 200px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: large;
 }
 p{
+    padding-left: 200px;
+    padding-right: 200px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
 }
@@ -101,10 +113,6 @@ section #partners .partner img{
     height: 90px;
 }
 /*Cliffs*/
-#main-cliff{
-    padding-left: 200px;
-    padding-right: 200px;
-}
 section #cliff-section{
     width: 100%;
     background-color:white;
@@ -163,7 +171,7 @@ footer #nondisclaimer .social .fa{
     width: 15px;
     text-align: center;
     text-decoration: none;
-    margin: 0 4px;
+    margin: 25px 5px;
     border-radius: 50%;
 }
 footer #nondisclaimer .social .fa:hover{
@@ -259,9 +267,7 @@ input[type="submit"]{
     background-color: #4977D1;
     color: #fff;
 }
-h1{
-    color:#9ed034;
-}
+
 .phone span[Phone]{
     font-weight: bolder #8baae9;
 }
@@ -273,12 +279,16 @@ h1{
     height: 50px;
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
-}
-#timeofday span{
+    color:#3a3a3a ;
     font-family: Arial, Helvetica, sans-serif;
-    color: #3a3a3a;
 }
 #clock{
     font-family: Arial, Helvetica, sans-serif;
     color: #125688;
+}
+
+/*Contact info*/
+.contactinfo{
+    padding-left: 200px;
+    padding-right: 200px;
 }

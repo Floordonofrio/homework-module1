@@ -88,7 +88,7 @@
             var timeDiff;
             var adjTimeDiff;
             var timeZone;
-        }
+        
         //Add 0 to single digits for secods
         if (sec<10){
             sec="0" +sec;
@@ -112,6 +112,7 @@
         document.getElementById("clock").innerText=time; //adding time
         //Run time data function every 1 second
         setInterval(currentTime,1000);
+        }
         //Initial run of time data function
         currentTime();
         
