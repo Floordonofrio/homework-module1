@@ -84,10 +84,10 @@
             var min=d.getMinutes(); //Get current minutes
             var sec=d.getSeconds(); //Get current seconds
             var ampm; //Declare variable to store AM or PM
-            var utchr = d.getUTCHours();
-            var timeDiff;
-            var adjTimeDiff;
-            var timeZone;
+            var utchr = d.getUTCHours(); //Get current Greenwich time (GMT)
+            var timeDiff; //store the time difference between GMT and ours
+            var adjTimeDiff; //time difference converted into positive number
+            var timeZone; //to store the four time zones (PT,MT,CT,ET)
         
         //Add 0 to single digits for secods
         if (sec<10){
@@ -106,8 +106,24 @@
         }else{
             ampm="AM"
         }
+        //Determine time zone
+        if (timeDiff ==6){
+            timeZone="CT";
+        }
+        else if (timeDiff ==7){
+            timeZone="ET";
+        }
+        else if (timeDiff ==5){
+            timeZone="MD";
+        }
+        else if (timeDiff ==4){
+            timeZone="PT";
+        }
+        else {
+            timeZone = utchr;
+        }
         //Asemble time format to display
-        var time = hr+":"+min+":"+sec+" "+ampm;
+        var time = hr+":"+min+":"+sec+" "+ampm + utchr;
         //Display current local time and time zone on HTML elements
         document.getElementById("clock").innerText=time; //adding time
         //Run time data function every 1 second
