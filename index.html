@@ -107,23 +107,20 @@
             ampm="AM"
         }
         //Determine time zone
-        if (timeDiff ==6){
+        if (timeDiff ==-6 || timeDiff == 18){
             timeZone="CT";
         }
-        else if (timeDiff ==7){
+        else if (timeDiff == -5 || timeDiff == 19){
             timeZone="ET";
         }
-        else if (timeDiff ==5){
+        else if (timeDiff == -7 || timeDiff == 17){
             timeZone="MD";
         }
-        else if (timeDiff ==4){
+        else if (timeDiff == -8 || timeDiff == 16){
             timeZone="PT";
         }
-        else {
-            timeZone = utchr;
-        }
         //Asemble time format to display
-        var time = hr+":"+min+":"+sec+" "+ampm + utchr;
+        var time = hr+":"+min+":"+sec+" "+ampm + " " + timeZone ;
         //Display current local time and time zone on HTML elements
         document.getElementById("clock").innerText=time; //adding time
         //Run time data function every 1 second
