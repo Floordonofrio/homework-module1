@@ -169,6 +169,9 @@ footer #diclaimer p{
     font-size: 0.85em;
     text-align: center;
 }
+footer #nondisclaimer .social{
+    padding-left: 80%;
+}
 footer #nondisclaimer .social .fa{
     padding: 15px;
     font-size: 15px;
