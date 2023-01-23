@@ -76,59 +76,54 @@
     
     <!--JavaScript Codes-->
     <script>
-        //Create a time data function
-        function currentTime(){
+        //1.Creat a time data function
+        function currentTime() {
             //Declare variables
-            var d=new Date(); //Get current date
-            var hr=d.getHours(); //Get current hours
-            var min=d.getMinutes(); //Get current minutes
-            var sec=d.getSeconds(); //Get current seconds
-            var ampm; //Declare variable to store AM or PM
-            var utchr = d.getUTCHours(); //Get current Greenwich time (GMT)
-            var timeDiff; //store the time difference between GMT and ours
-            var adjTimeDiff; //time difference converted into positive number
-            var timeZone; //to store the four time zones (PT,MT,CT,ET)
-        
-        //Add 0 to single digits for secods
-        if (sec<10){
-            sec="0" +sec;
-        }
-        //Add 0 to single digits minutes
-        if(min<10){
-            min = "0" + min;
-        }
-        //Determine AM or PM string
-        if(hr==12){
-            ampm = "PM"; //Set to pm
-        } else if (hr>12){
-            hr = 12;
-            ampm="PM";
-        }else{
-            ampm="AM"
-        }
-        //Determine time zone
-        if (timeDiff ==-6 || timeDiff == 18){
-            timeZone="CT";
-        }
-        else if (timeDiff == -5 || timeDiff == 19){
-            timeZone="ET";
-        }
-        else if (timeDiff == -7 || timeDiff == 17){
-            timeZone="MD";
-        }
-        else if (timeDiff == -8 || timeDiff == 16){
-            timeZone="PT";
-        }
-        //Asemble time format to display
-        var time = hr+":"+min+":"+sec+" "+ampm + " " + timeZone ;
-        //Display current local time and time zone on HTML elements
-        document.getElementById("clock").innerText=time; //adding time
-        //Run time data function every 1 second
-        setInterval(currentTime,1000);
+            var d = new Date(); //Get current date
+            var hr = d.getHours(); //Get current hours
+            var min = d.getMinutes(); //Get current minutes
+            var sec = d.getSeconds(); //Get current seconds
+            var ampm; //Declare empty variable to store AM or PM
+            //Get current zone
+            var zone = new Date().toLocaleTimeString('en-us', {timeZoneName:'short'}).split(' ')[2]; 
+
+            //Get current zone challenge
+            var utchr = d.getUTCHours (); //Get current Greenwich Mean Time (GMT)*/
+            var timeDiff = hr - utchr; //To store time difference between GMT hour and Local hour
+            var adjTimeDiff = Math.abs(timeDiff) ; //To store time difference converted to positive number
+            var timeZone; //To store the 4 time zones (PT,MT,CT,ET)*/
+            /*var zone = new Date().toLocaleTimeString('en-us', {timeZoneName:'short'}).split(' ')[2]; */
+
+            //Add 0 to single digits for seconds
+            if (sec < 10) {
+                sec = "0" + sec;
+            } else {
+                ampm = "AM";
+            }
+
+            //Determin timezone
+            if (adjTimeDiff == 6) {
+                timeZone = "CT";
+            } else if (adjTimeDiff == 7) {
+                timeZone = "ET";
+            } else if (adjTimeDiff == 5) {
+                timeZone = "MT";
+            } else if (adjTimeDiff == 4) {
+                timeZone = "PT";
+            } else {
+                timeZone = utchr;
+            }
+
+            //Assemble time format to display
+            var time = hr + ":" + min + ":" + sec + " " + ampm + " " + zone;
+            var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timeZone;
+            //Display current local time and time zone on HTML elements
+            document.getElementById("clock").innerText = time;
+            //Run time data function every 1 second
+            setInterval (currentTime, 1000);
         }
         //Initial run of time data function
         currentTime();
-        
     </script>
 
     <script>
@@ -148,7 +143,7 @@
         }
     //Display all six image codes store in the array
         document.getElementById("partners").innerHTML = imageList.join("");
-</script>
+    </script>
 
 </body>
 </html>
