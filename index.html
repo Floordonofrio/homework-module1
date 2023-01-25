@@ -73,77 +73,10 @@
         
     </footer>
     </div>
-    
-    <!--JavaScript Codes-->
-    <script>
-        //1.Creat a time data function
-        function currentTime() {
-            //Declare variables
-            var d = new Date(); //Get current date
-            var hr = d.getHours(); //Get current hours
-            var min = d.getMinutes(); //Get current minutes
-            var sec = d.getSeconds(); //Get current seconds
-            var ampm; //Declare empty variable to store AM or PM
-            //Get current zone
-            var zone = new Date().toLocaleTimeString('en-us', {timeZoneName:'short'}).split(' ')[2]; 
-
-            //Get current zone challenge
-            var utchr = d.getUTCHours (); //Get current Greenwich Mean Time (GMT)*/
-            var timeDiff = hr - utchr; //To store time difference between GMT hour and Local hour
-            var adjTimeDiff = Math.abs(timeDiff) ; //To store time difference converted to positive number
-            var timeZone; //To store the 4 time zones (PT,MT,CT,ET)*/
-            /*var zone = new Date().toLocaleTimeString('en-us', {timeZoneName:'short'}).split(' ')[2]; */
-
-            //Add 0 to single digits for seconds
-            if (sec < 10) {
-                sec = "0" + sec;
-            } else {
-                ampm = "AM";
-            }
-
-            //Determin timezone
-            if (adjTimeDiff == 6) {
-                timeZone = "CT";
-            } else if (adjTimeDiff == 7) {
-                timeZone = "ET";
-            } else if (adjTimeDiff == 5) {
-                timeZone = "MT";
-            } else if (adjTimeDiff == 4) {
-                timeZone = "PT";
-            } else {
-                timeZone = utchr;
-            }
-
-            //Assemble time format to display
-            var time = hr + ":" + min + ":" + sec + " " + ampm + " " + zone;
-            var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timeZone;
-            //Display current local time and time zone on HTML elements
-            document.getElementById("clock").innerText = time;
-            //Run time data function every 1 second
-            setInterval (currentTime, 1000);
-        }
-        //Initial run of time data function
-        currentTime();
-    </script>
-
-    <script>
-        var photos = []; //empty array to store image element
-        var fileNames = []; //store image file names
-        var imageList = []; //store html list that contains an image
-        var image; //store the assembled image list codes
-        var openList = "<li class='partner'>";
-        var closeList = "</li>";
-
-    //Create a loop to create 6 images satarting with index of 0
-        for (var i=0; i<6; i++){
-            fileNames.push("partner" + (i+1)); //creat image files names ans store in the array
-            photos.push("<img src='images/" + fileNames[i] + ".png'>"); //assembly file naes and store it in the array
-            image = openList + photos[i] + closeList; //assembly image element and store in variable
-            imageList.push(image);
-        }
-    //Display all six image codes store in the array
-        document.getElementById("partners").innerHTML = imageList.join("");
-    </script>
+    <!--Digital clock-->
+    <script src="js/digclock.js"></script>
+    <!--Partners-->
+    <script src="js/site_scripts.js"></script>
 
 </body>
 </html>
