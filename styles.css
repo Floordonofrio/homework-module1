@@ -271,7 +271,7 @@ input[type="submit"]{
     display: box;
     margin: 20px 0 10px 0;
     width: 100px;
-    /*background-color: #4977D1;*/
+    background-color: #4977D1;
     color: #fff;
     border: none;
 }
