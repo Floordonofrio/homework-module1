@@ -311,3 +311,11 @@ input[type="submit"]{
     padding-right: 200px;
 }
 
+
+/*Query*/
+.selected{
+    cursor: pointer
+}
+.background-querytable{
+    background: #3b54068a ;
+}
