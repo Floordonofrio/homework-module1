@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.selected').click(function(){
-        $(this).toggleClass('.background-querytable')
+    $('td').click(function(){
+        $(this).toggleClass('querytable')
     })
 })
