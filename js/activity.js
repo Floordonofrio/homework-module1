@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $("td").click(function () {
     var content = $(this).text();
+    var coltitle = th : eq ($(this).index()).text();
 
     if (content != "Not Available") {
       $(this).toggleClass("tdhighlight");
@@ -8,7 +9,7 @@ $(document).ready(function () {
       if ($(this).hasClass("tdhighlight")) {
         $("#displaySelected").css("visibility","visible");
         $("#displaySelected").css("margin-top", "2em");
-        $("#result").append("<p>"+content+"</p>");
+        $("#result").append("<p>"+content+ "at" + coltitle + "</p>" );
       
     }else{
         $('#result p:contains ('+content+')').remove();
