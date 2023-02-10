@@ -1,8 +1,12 @@
-
+$(document).ready(function () {
+  $('#tbody').bind("click", function(e){
+    $(e.target).closest('.tdbox').toggleClass('tdclick')
+  })
+})
 $(document).ready(function () {
   $("td").click(function () {
     var content = $(this).text();
-    var coltitle = th : eq ($(this).index()).text();
+    var coltitle = $('.thead').eq($(this).index()).text();
 
     if (content != "Not Available") {
       $(this).toggleClass("tdhighlight");
