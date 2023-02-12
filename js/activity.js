@@ -6,7 +6,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("td").click(function () {
     var content = $(this).text();
-    var coltitle = $('.thead').eq($(this).index()).text();
+    var coltitle = $('.thead').eq($(this).index()).text()
 
     if (content != "Not Available") {
       $(this).toggleClass("tdhighlight");
